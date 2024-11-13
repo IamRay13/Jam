@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare Jurisdiction Finder</title>
+    <style>
+        body {
+            font-family: Trebuchet MS;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Medicare Jurisdiction Finder</h1>
+        <form id="stateForm">
+            <label for="state">Enter State Name:</label><br>
+            <input type="text" id="state" name="state" required><br><br>
+            <button class="btn" type="submit">Find Jurisdiction</button>
+            <button class="btn" type="button" onclick="clearText()">Clear</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById('stateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const state = document.getElementById('state').value.trim().toLowerCase();
+            const jurisdictions = {
+                'nh': 'Jurisdiction A', 'new hampshire': 'Jurisdiction A',
+                'vt': 'Jurisdiction A', 'vermont': 'Jurisdiction A',
+                'me': 'Jurisdiction A', 'maine': 'Jurisdiction A',
+                'ri': 'Jurisdiction A', 'rhode island': 'Jurisdiction A',
+                'ma': 'Jurisdiction A', 'massachusetts': 'Jurisdiction A',
+                'de': 'Jurisdiction A', 'delaware': 'Jurisdiction A',
+                'md': 'Jurisdiction A', 'maryland': 'Jurisdiction A',
+                'pa': 'Jurisdiction A', 'pennsylvania': 'Jurisdiction A',
+                'ct': 'Jurisdiction A', 'connecticut': 'Jurisdiction A',
+                'dc': 'Jurisdiction A', 'district of columbia': 'Jurisdiction A',
+                'nj': 'Jurisdiction A', 'new jersey': 'Jurisdiction A',
+                'mn': 'Jurisdiction B', 'minnesota': 'Jurisdiction B',
+                'wi': 'Jurisdiction B', 'wisconsin': 'Jurisdiction B',
+                'il': 'Jurisdiction B', 'illinois': 'Jurisdiction B',
+                'oh': 'Jurisdiction B', 'ohio': 'Jurisdiction B',
+                'in': 'Jurisdiction B', 'indiana': 'Jurisdiction B',
+                'ky': 'Jurisdiction B', 'kentucky': 'Jurisdiction B',
+                'mi': 'Jurisdiction B', 'michigan': 'Jurisdiction B',
+                'co': 'Jurisdiction C', 'colorado': 'Jurisdiction C',
+                'nm': 'Jurisdiction C', 'new mexico': 'Jurisdiction C',
+                'ok': 'Jurisdiction C', 'oklahoma': 'Jurisdiction C',
+                'tx': 'Jurisdiction C', 'texas': 'Jurisdiction C',
+                'ar': 'Jurisdiction C', 'arkansas': 'Jurisdiction C',
+                'tn': 'Jurisdiction C', 'tennessee': 'Jurisdiction C',
+                'ms': 'Jurisdiction C', 'mississippi': 'Jurisdiction C',
+                'la': 'Jurisdiction C', 'louisiana': 'Jurisdiction C',
+                'al': 'Jurisdiction C', 'alabama': 'Jurisdiction C',
+                'ga': 'Jurisdiction C', 'georgia': 'Jurisdiction C',
+                'sc': 'Jurisdiction C', 'south carolina': 'Jurisdiction C',
+                'fl': 'Jurisdiction C', 'florida': 'Jurisdiction C',
+                'wv': 'Jurisdiction C', 'west virginia': 'Jurisdiction C',
+                'nc': 'Jurisdiction C', 'north carolina': 'Jurisdiction C',
+                'va': 'Jurisdiction C', 'virginia': 'Jurisdiction C',
+                'wa': 'Jurisdiction D', 'washington': 'Jurisdiction D',
+                'or': 'Jurisdiction D', 'oregon': 'Jurisdiction D',
+                'mt': 'Jurisdiction D', 'montana': 'Jurisdiction D',
+                'ca': 'Jurisdiction D', 'california': 'Jurisdiction D',
+                'nv': 'Jurisdiction D', 'nevada': 'Jurisdiction D',
+                'wy': 'Jurisdiction D', 'wyoming': 'Jurisdiction D',
+                'nd': 'Jurisdiction D', 'north dakota': 'Jurisdiction D',
+                'sd': 'Jurisdiction D', 'south dakota': 'Jurisdiction D',
+                'ne': 'Jurisdiction D', 'nebraska': 'Jurisdiction D',
+                'ia': 'Jurisdiction D', 'iowa': 'Jurisdiction D',
+                'mo': 'Jurisdiction D', 'missouri': 'Jurisdiction D',
+                'ks': 'Jurisdiction D', 'kansas': 'Jurisdiction D',
+                'ut': 'Jurisdiction D', 'utah': 'Jurisdiction D',
+                'id': 'Jurisdiction D', 'idaho': 'Jurisdiction D',
+                'az': 'Jurisdiction D', 'arizona': 'Jurisdiction D'
+            };
+            const result = jurisdictions[state] || 'Unknown Jurisdiction';
+            document.getElementById('result').textContent = 'Medicare Jurisdiction: ' + result;
+        });
+
+        function clearText() {
+            document.getElementById('state').value = '';
+            document.getElementById('result').textContent = '';
+        }
+    </script>
+</body>
+</html>

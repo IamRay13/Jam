@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timely Filling Date Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search for Timely Filling Date</h1>
+        <form id="searchForm">
+            <label for="fillingDate">Enter Timely Filling Date:</label><br>
+            <input type="date" id="fillingDate" name="fillingDate" required><br><br>
+            <label for="excelFile">Attach Excel File:</label><br>
+            <input type="file" id="excelFile" name="excelFile" accept=".xlsx,.xls" required><br><br>
+            <button class="btn" type="submit">Search</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fillingDate = document.getElementById('fillingDate').value;
+            const excelFile = document.getElementById('excelFile').files[0];
+            if (fillingDate && excelFile) {
+                document.getElementById('result').textContent = 'Searching for results...';
+                // Here you can add the logic to process the file and date
+            } else {
+                document.getElementById('result').textContent = 'Please enter a date and attach an Excel file.';
+            }
+        });
+    </script>
+</body>
+</html>

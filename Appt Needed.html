@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Needed</title>
+    <style>
+        body {
+
+	margin: 1in 1in; /* 1 inch on top and bottom, 2 inches on left and right */
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;
+            text-align: center;
+            font-family: Segoe UI;
+            background-image: url('phone.jpg');
+            background-size: cover;
+            background-position: center;
+            color: black;        }
+	.brown-text { color: brown; }
+	.content {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+	     justify-content: center;
+        }
+	.description {
+            text-align: justify;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+        h1 {
+            text-align: center;
+        }
+        .script {
+            margin-top: 20px;
+        }
+        .script-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+        .script-content {
+            font-style: regular;
+        }
+    </style>
+</head>
+<body>
+   <div class="content">
+	<div class="description">
+        <h1>Appointment Needed</h1>
+        <p> It is the task of obtaining Doctor's appointment information from Patients or Patient's POA. The reason for call may also depend on what is needed on the patient's documentation after being reviewed by the NONES group. It could either be an ABN or the need to verify Patient's PCP information or confirmation of the Pick Up from a different provider.  </p>
+        <div class="script">
+            <div class="script-title">SPIEL FOR VOICEMAIL CALLS (Standard Spiel)</div>
+            <div class="script-content">
+                "Hello, this is (YOUR NAME) from (Aerocare/ Youngs Medical/ Ocean Homehealth/ Montgomery Medical/ Family Medical/ Medbridge Medical etc.) an Adapthealth company calling on a recorded line regarding the current billing status of (pt's name/your) equipment.  It is important that you call us back as soon as possible to ensure that we have the most up-to-date information on (pt's name/your) account.  We can be reached at (844-843-9140). We look forward to speaking with you soon. Thank you."
+            </div>
+        </div>
+        
+        <div class="script">
+            <div class="script-title">SPIEL FOR LIVE CALLS / RFC: </div>
+            <div class="script-content">
+                 " Hi this is ( YOUR NAME) calling on a recorded line from (Aerocare, Youngs medical, etc.) an Adapthealth company. I am looking for (pt's name). Great day (pt's name), we are your Medical Equipment provider and I'm calling in reference to one of your DME in relation to your insurance. 
+
+<br> And before, we proceed, can you please verify your DOB for HIPPA compliance. ("Are you authorized to speak on behalf of this patient for his medical care and treatment?") </br>
+
+<br> I am calling today because your Insurance Company which is under Medicare is requiring that we obtain updated sets of qualifying documents in order to continue billing for your DME. For us to obtain these requirement I would like to know if you (the pt) had any recent appt or upcoming appt with your PCP? " </br> (Ask for the MD's complete name, phone number and fax number if available) (If there is no recent or upcoming appt advise pt to call DO and make an appt ASAP) / (Verify with pt if the MD's info we have on file her current PCP) </b>
+
+<br> <ul> <b>REMEMBER: </b> </br>
+<li> Perform EEC (Electronic Elegibility Check) to check if insurance is Active</li>
+<li> Update the call attempts in SO </li>
+<img src="Call Attempts.png">
+<li>Once an appointment is obtained, Flip Stop Billing to <b>Appointment Scheduled </b>. Change DOD to  Date of Appointment. </li>
+<li>If not, update Call Attempt and Stop Billing should remain to Appt Needed </li>
+<li> The number of call attempts to the Patient should reach <b>Call Attempt 03 </b> before you can flip the STOPPED BILLING  to <b>MRPCE (Manager Review Patient Contact Exhausted)</b> </li>
+
+<li> You can make a follow up every after <b>3 Business days</b> to avoid complains for harrassment. </li>
+<li> If the Patients <b> refuses HIPAA Verification </b> - Move the Stop Billing to <b>MR-AR (Manager Review - Asset Recovery) </b> and <b>close</b> the <u> <b>	Patient Requalification Needed </b> </u>Note</li>
+<li> If the account is in <u><b>Branch Review/Asset Recovery </b></u> or accounts needing to be skipped, make the call attempt and end it within <u><b>45 seconds</b></u>. You do not need to wait for it to be routed to VM or for you to hear the ring. You have to end it right away in order for the Wrap Up Code to show up "Future Follow Up ". Make the necessary notes on the account and on the PureCloud Note  </li>
+<li> Remember to choose the correct <b>Wrap Up Codes</b> after the call is made </li>
+<img src="WrapUpCodes.png">
+<li> For Special Cases of PT is in Nursing Facility: Call the Facility to verify if they can provide their own Wheelchair or PT will either pay Out-Of-Pocket or Pick-Up  </li>
+<li> Or if <b>PT is in Nursing Facility, REHAB, Admitted at a hospital with No Discharged date </b>- We need to create Pick Up ticket and send them to Branch. We need to call them if discharge date was provided. If it's in Assisted Living, we can still dispense or Requalify </li>
+</ul>
+
+<ul>
+<b><u>Note Templates: </u> </b>
+<br> *This is situational, you will have to document what happened on the call accordingly. </br>
+<li> Called pt at 931-200-8352 for appointment details, routed to voicemail || left voicemail || Call exhausted || Flipped to MRPCE.  </li>
+<li> Skipped || pt has been called recently. We will callback after 3 business days to observe SOP and avoid harassment complaint. </li>
+<li>Patient refused to verify DOB and does not want to be called again  || Flipped to Manager Review  </li>
+<li>Skipped || SO is in ARP - BRANCH REVIEW || no longer for appt dialer.  </li> 
+<li>Skipped || SO is in ARP 1- ASSET RECOVERY || no longer for appt dialer.  </li> 
+<li>Call Attempt 3/3 Call exhausted || Flipped to MRPCE  </li>
+<li> Dialed the number (  ). No answer - number no longer in service. Flip to MR-AR   </li>
+<li> Dialed the number (  ).Call got routed to voicemail || Unable to leave message - voicemail box full.   </li>
+<li> Dialed the number (  ).Call got routed to voicemail || unable to leave message - not set up yet.   </li>
+<li> Dialed the number (  ). No answer - auto disconnect.  </li>
+<li> Dialed the number (  ). No answer - request time out.   </li>
+<li>Checked Eligibility || Part C Medicare Advantage (MCO) enrollment with CARITEN HEALTH PLAN INC. from 11/1/2024 || Flipped WIP state to .6B Updated Insurance Needed.  </li> 
+<li> Patient is no longer using the equipment and agreed for a pick-up, verified address and created p/u ticket || Updated SO  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
